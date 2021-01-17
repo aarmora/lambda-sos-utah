@@ -1,11 +1,9 @@
 import puppeteer from 'puppeteer';
-import { getDetails } from '.';
+import { getDetails, setUpBrowser } from '.';
 
 (async () => {
 
-	const browser = await puppeteer.launch({
-		headless: false
-	});
+	const browser = await setUpBrowser();
 
 	for (let i = 0; i < 10; i++) {
 		try {
