@@ -1,11 +1,15 @@
 import puppeteer from 'puppeteer';
 import { getDetails, setUpBrowser } from '.';
+import dotenv from 'dotenv';
+
+
+dotenv.config();
 
 (async () => {
 
 	const browser = await setUpBrowser();
 
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < 5; i++) {
 		try {
 			await getDetails(browser, 11728064 + i);
 		}
@@ -15,6 +19,9 @@ import { getDetails, setUpBrowser } from '.';
 	}
 
 	await browser.close();
-
-
 })();
+
+// (async () => {
+// 	await callWithAxios();
+
+// })();
